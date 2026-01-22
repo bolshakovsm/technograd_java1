@@ -97,3 +97,34 @@ public class Main {
     }
   }
 }
+Циклы 1 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    int popul = 10000000;
+    int change = 14 - 8;
+    for (int year = 1; year <= 10; year++) {
+      popul += popul * change / 1000;
+      //System.out.println(year + " " + popul);
+    }
+    System.out.println(popul);
+  }
+}
+Циклы 2 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    int popul = 10000000;
+    int rateBirth = 14;
+    int rateDeath = 8;
+    for (int year = 1; year <= 10; year++) {
+      if (rateBirth > 7) rateBirth -= 1;
+      if (rateDeath > 6) rateDeath -= 1;
+      popul += popul * (rateBirth - rateDeath) / 1000;
+      // System.out.printf("%d %d %d %d%n", year, rateBirth, rateDeath, popul);
+    }
+    System.out.println(popul);
+  }
+}
