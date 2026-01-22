@@ -27,3 +27,21 @@ public class Main {
       System.out.println("Неизвестное число");
   }
 }
+3 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    double s = sc.nextDouble();
+    int r;
+    if (s < 100)
+      r = 5;
+    else if (s <= 200)
+      r = 7;
+    else
+      r = 10;
+    s += s * r / 100;
+    System.out.println(s);
+  }
+}
