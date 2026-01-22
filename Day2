@@ -45,3 +45,55 @@ public class Main {
     System.out.println(s);
   }
 }
+4 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Введите номер операции:\n1. Сложение\n2. Вычитание\n3. Умножение");
+    int op = sc.nextInt();
+    switch (op) {
+      case 1:
+        System.out.println("Сложение");
+        break;
+      case 2:
+        System.out.println("Вычитание");
+        break;
+      case 3:
+        System.out.println("Умножение");
+        break;
+      default:
+        System.out.println("Операция не определена");
+    }
+  }
+}
+5 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Введите номер операции:\n1. Сложение\n2. Вычитание\n3. Умножение");
+    int op = sc.nextInt();
+    switch (op) {
+      case 1: case 2: case 3:
+        System.out.println("Введите два числа");
+        double n1 = sc.nextDouble();
+        double n2 = sc.nextDouble();
+        switch (op) {
+          case 1:
+            System.out.println("Сложение: " + (n1 + n2));
+            break;
+          case 2:
+            System.out.println("Вычитание: " + (n1 - n2));
+            break;
+          case 3:
+            System.out.println("Умножение: " + (n1 * n2));
+        }
+        break;
+      default:
+        System.out.println("Операция не определена");
+    }
+  }
+}
