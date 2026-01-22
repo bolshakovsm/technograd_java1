@@ -124,3 +124,47 @@ public class Main {
     System.out.println(popul);
   }
 }
+Циклы 3 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Введите сумму вклада: ");
+    float deposit = sc.nextFloat();
+    if (deposit > 0) {
+      System.out.print("Введите количество месяцев: ");
+      int monthLast = sc.nextInt();
+      if (monthLast > 0) {
+        for (int monthThis = 1; monthThis <= monthLast; monthThis++) {
+          deposit += deposit * 0.07;
+          //System.out.printf("%3d %,15.2f%n", monthThis, deposit);
+        }
+        System.out.printf("%,.2f%n", deposit);
+      }
+    }
+  }
+}
+Циклы 4 ======================
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Введите сумму вклада: ");
+    float deposit = sc.nextFloat();
+    if (deposit > 0) {
+      System.out.print("Введите количество месяцев: ");
+      int monthLast = sc.nextInt();
+      if (monthLast > 0) {
+        int monthThis = 1;
+        do {
+          deposit += deposit * 0.07;
+          //System.out.printf("%3d %,15.2f%n", monthThis, deposit);
+          monthThis++;
+        } while (monthThis <= monthLast);
+        System.out.printf("%,.2f%n", deposit);
+      }
+    }
+  }
+}
