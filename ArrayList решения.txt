@@ -1,0 +1,221 @@
+Задача 1: Создание и вывод списка
+Описание:
+Создайте ArrayList типа String, добавьте в него 5 различных строк и выведите их на экран.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al = new ArrayList<String>();
+    al.add("a");
+    al.add("b");
+    al.add("c");
+    al.add("d");
+    al.add("e");
+    System.out.println(al);
+  }
+}
+
+Задача 2: Удаление элементов
+Описание:
+Создайте ArrayList целых чисел, добавьте в него 10 элементов. Удалите элемент по индексу 3 и выведите список после удаления.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> al = new ArrayList<Integer>();
+    for (Integer i = 0; i < 10; i++) al.add(i);
+    System.out.println(al);
+    al.remove(3);
+    System.out.println(al);
+  }
+}
+
+Задача 3: Поиск элемента в списке
+Описание:
+Создайте ArrayList строк, добавьте в него несколько элементов. Напишите программу, которая проверит наличие строки в списке и выведет её индекс, если она существует.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al = new ArrayList<String>();
+    al.add("a");
+    al.add("b");
+    al.add("c");
+    al.add("d");
+    al.add("e");
+    int i = al.indexOf("c");
+    if (i > -1) System.out.print(i);
+  }
+}
+
+Задача 4: Перебор и изменение элементов
+Описание:
+Создайте ArrayList целых чисел и увеличьте каждый элемент на 2 с помощью цикла.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> al = new ArrayList<Integer>();
+    for (Integer i = 10; i < 20; i++) al.add(i);
+    System.out.println(al);
+    for (Integer i = 0; i < al.size(); i++) al.set(i, al.get(i) + 2);
+    System.out.println(al);
+  }
+}
+
+Задача 5: Объединение двух списков
+Описание:
+Создайте два списка ArrayList типа String и объедините их. Выведите итоговый список на экран.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al1 = new ArrayList<String>();
+    ArrayList<String> al2 = new ArrayList<String>();
+    al1.add("a"); al1.add("b");
+    al2.add("c"); al2.add("d");
+    al1.addAll(al2);
+    System.out.print(al1);
+  }
+}
+
+Задача 6: Удаление всех элементов, начинающихся на определенную букву
+Описание:
+Создайте ArrayList строк, добавьте в него несколько строк. Удалите все строки, которые начинаются на букву "A".
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al = new ArrayList<String>();
+    al.add("E2");
+    al.add("E4");
+    al.add("A5");
+    al.add("B6");
+    al.add("A7");
+    System.out.println(al);
+    int iLast = al.size() - 1;
+    for (int i = iLast; i >= 0; i--) {
+      if (al.get(i).charAt(0) == 'A') al.remove(i);
+    }
+    System.out.println(al);
+  }
+}
+
+Задача 7: Поиск максимального элемента
+Описание:
+Создайте ArrayList целых чисел. Найдите и выведите максимальный элемент в списке.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<Integer> al = new ArrayList<Integer>();
+    al.add(6);
+    al.add(1);
+    al.add(9);
+    al.add(4);
+    al.add(7);
+    System.out.println(al);
+    int m = Integer.MIN_VALUE;
+    for (Integer n: al) {
+      if (m < n) m = n;
+    } 
+    System.out.println(m);
+  }
+}
+
+Задача 8: Удаление дубликатов
+Описание:
+Создайте ArrayList строк с повторяющимися значениями. Удалите все дубликаты из списка.
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al = new ArrayList<String>();
+    al.add("E2");
+    al.add("E4");
+    al.add("A5");
+    al.add("E2");
+    al.add("A7");
+    al.add("E2");
+    al.add("A7");
+    System.out.println(al);
+    String test;
+    int i = -1;
+    int jLast;
+    do {
+      i++;
+      test = al.get(i);
+      jLast = al.size() - 1;
+      for (int j = jLast; j > i; j--) {
+        if (al.get(j).equals(test)) al.remove(j);
+      }
+    } while (i < al.size() - 1);
+    System.out.println(al);
+  }
+}
+
+Задача 9: Сортировка списка
+Описание:
+Создайте ArrayList строк, отсортируйте его в алфавитном порядке и выведите отсортированный список.
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al = new ArrayList<String>();
+    al.add("E2");
+    al.add("E4");
+    al.add("A5");
+    al.add("D4");
+    al.add("A7");
+    al.add("E3");
+    al.add("A7");
+    System.out.println(al);
+    Object[] order;
+    order = al.toArray();
+    Arrays.sort(order);
+    for (int i = 0; i < order.length; i++) {
+      al.set(i, order[i].toString());
+    }
+    System.out.println(al);
+  }
+}
+
+Задача 10: Реверс списка
+Описание:
+Создайте ArrayList строк, выведите список в обратном порядке.  
+
+import java.util.ArrayList;
+
+public class Main {
+  public static void main(String[] args) {
+    ArrayList<String> al = new ArrayList<String>();
+    al.add("*");
+    al.add("**");
+    al.add("***");
+    al.add("****");
+    al.add("*****");
+    al.add("******");
+    al.add("*******");
+    System.out.println(al);
+    int iMiddle = (al.size() - 1) / 2;    
+    String tmp;
+    int iTail;
+    for (int iHead = 0; iHead <= iMiddle; iHead++) {
+      iTail = (al.size() - 1) - iHead;
+      tmp = al.get(iTail);
+      al.set(iTail, al.get(iHead));
+      al.set(iHead, tmp);
+    }
+    System.out.println(al);
+  }
+}
